@@ -6,9 +6,38 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+#root {
+  margin: 10px auto;
+}
+
+.App {
+  margin-top: 4rem;
+  width: 100%;
+  /*max-width: 1200px;*/
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.movie-card {
+  min-width: auto;
+  max-width: 250px;
+  margin: 1rem 0;
+}
+
+.movie-card:last-child {
+	margin-left: 0;
+}
+
+.movie-image {
+  height:450px;
 }
