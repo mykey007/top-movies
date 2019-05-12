@@ -14,7 +14,7 @@ const styles = {
     maxWidth: 345,
   },
   media: {
-    height: 140,
+    height: 200,
   },
 };
 
@@ -24,9 +24,7 @@ class MovieCard extends React.Component {
   selectMovie = () => {
     const { movie, selectMovie } = this.props;
     selectMovie(movie);
-};
-
-
+  };
 
 	render(){
 
@@ -57,12 +55,11 @@ class MovieCard extends React.Component {
     </Card>
 
 		);
-
-
-		return <div>{movie.title}</div>;
 	}
 }
-MovieCard.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
-export default withStyles(styles)(MovieCard);
+// MovieCard.propTypes = {
+//   classes: PropTypes.object.isRequired,
+// };
+// export default withStyles(styles)(MovieCard);
+
+export default MovieCard;

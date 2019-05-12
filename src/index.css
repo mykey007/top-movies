@@ -1,3 +1,31 @@
+@font-face {font-family: "RamaGothicMW01-Heavy";
+    src: url("//db.onlinewebfonts.com/t/a2403f8b3ae412d81d25977f386beddd.eot");
+    src: url("//db.onlinewebfonts.com/t/a2403f8b3ae412d81d25977f386beddd.eot?#iefix") format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/a2403f8b3ae412d81d25977f386beddd.woff2") format("woff2"),
+    url("//db.onlinewebfonts.com/t/a2403f8b3ae412d81d25977f386beddd.woff") format("woff"),
+    url("//db.onlinewebfonts.com/t/a2403f8b3ae412d81d25977f386beddd.ttf") format("truetype"),
+    url("//db.onlinewebfonts.com/t/a2403f8b3ae412d81d25977f386beddd.svg#RamaGothicMW01-Heavy") format("svg");
+}
+
+
+html {
+  font-size: 62.5%; /* 62.5% of 16px = 10px */
+
+  @media (min-width: 20rem) {
+    /* 20*16px = 320px */
+    background-color: lemonchiffon;
+    font-size: 200%;
+    /* 200% of 16px = 32px */
+  }
+
+  @media (min-width: 30em) {
+    /* 30*16px = 480px */
+    background-color: lightblue;
+    font-size: 300%; /* 300% of 16px = 30px */
+  }
+}
+
+
 body {
   margin: 0;
   padding: 0;
@@ -14,23 +42,28 @@ code {
     monospace;
 }
 
+header > div > h1 {
+	font-family: "RamaGothicMW01-Heavy" !important;
+	font-size: 3.5rem !important;
+}
+
 #root {
   margin: 10px auto;
 }
 @supports (display: grid) {
 	.App {
-	  margin: 4rem auto auto;
-	  width: 100%;
-	  /*max-width: 1200px;*/
+	  margin: 8rem auto auto;
+	  padding: 0 2rem;
 	  display: grid;
-	  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-	  grid-gap: 3rem;
+	  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	  grid-gap: 1rem;
+	  justify-items: center;
 	}
 }
 
 .movie-card {
   min-width: auto;
-  max-width: 200px;
+  max-width: 400px;
   margin: 1rem 0;
 }
 
@@ -39,5 +72,5 @@ code {
 }
 
 .movie-image {
-  height:100px;
+  /*height:100px;*/
 }

@@ -28,8 +28,8 @@ class App extends Component {
   //add state to the component
   state = {movies: [], selectedMovie: null};
 
-  selectMovie = movie => this.setState({selectedMovie: movie});
-  clearMovie = () => this.setState({selectedMovie: null});
+  selectMovie = movie => this.setState({ selectedMovie: movie });
+  clearMovie = () => this.setState({ selectedMovie: null });
 
   // add lifecycle function to make it async
   async componentDidMount(){
@@ -59,20 +59,25 @@ class App extends Component {
       <div>
         <AppBar position="fixed" color="default">
           <Toolbar>
-            <Typography variant="h6" color="inherit">
+            <Typography variant="h1" color="inherit">
               Top Rated Movies
             </Typography>
           </Toolbar>
         </AppBar>
 
         <div className="App">
-        {movies.map(movie => <MovieCard key={movie.id} movie={movie} selectMovie={this.movie} />)}
+          {movies.map(movie => (
+            <MovieCard 
+              key={movie.id} 
+              movie={movie} 
+              selectMovie={this.selectMovie} 
+            />
+          ))}
         </div>
         <MovieDialog movie={selectedMovie} handleClose={this.clearMovie} />
       </div>
     );
   }
 }
-
 
 export default withStyles(styles)(App);
