@@ -44,8 +44,8 @@ class MovieCard extends React.Component {
           <p>Rating: <b> {movie.vote_average}/10</b></p>
           </Typography>
           <Typography component="p">
-            {movie.overview}
-          </Typography>
+             {movie.overview}
+           </Typography>
         </CardContent>
       <CardActions>
         <Button size="small" color="primary" onClick={this.selectMovie}>
