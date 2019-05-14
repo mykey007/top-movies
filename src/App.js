@@ -105,7 +105,7 @@ class App extends Component {
             />
           ))}
         </div>
-        // <MovieDialog movie={selectedMovie} handleClose={this.clearMovie} />
+        <MovieDialog movie={selectedMovie} handleClose={this.clearMovie} />
       </div>
     );
   }

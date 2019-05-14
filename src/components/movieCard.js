@@ -33,13 +33,13 @@ class MovieCard extends React.Component {
 			<Card className="movie-card">
         <CardMedia
       	  className="movie-image"
-          image={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}          
+          image={`https://image.tmdb.org/t/p/w300${movie.backdrop_path}`}          
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
+          <Typography gutterBottom variant="h4" component="h2">
             {movie.title}
           </Typography>
-          <Typography>
+          <Typography component="section">
           <p>Release Date: <b>{movie.release_date}</b></p>
           <p>Rating: <b> {movie.vote_average}/10</b></p>
           </Typography>
