@@ -6,7 +6,7 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import CardMedia from '@material-ui/core/Card';
+import CardMedia from '@material-ui/core/CardMedia';
 import './movieDialouge.css';
 
 export default class MovieDialog extends React.Component {
@@ -63,7 +63,7 @@ export default class MovieDialog extends React.Component {
           {title}
           {content}
           <DialogActions>
-            <Button onClick={handleClose} color="secondary">
+            <Button onClick={handleClose} color="default">
               Close
             </Button>
           </DialogActions>
