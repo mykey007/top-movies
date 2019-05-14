@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-// import './App.css';
+import './App.css';
 
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
+import Input from '@material-ui/core/Input';
+import InputAdornment from '@material-ui/core/InputAdornment';
 
 import MovieCard from './components/movieCard'
 import MovieDialog from './components/movieDialouge'
@@ -26,10 +28,25 @@ const styles = {
 
 class App extends Component {
   //add state to the component
-  state = {movies: [], selectedMovie: null};
+  state = {movies: [], selectedMovie: null, searchText: ''};
 
   selectMovie = movie => this.setState({ selectedMovie: movie });
   clearMovie = () => this.setState({ selectedMovie: null });
+
+  // add search
+
+  searchTextChanged = e => this.setState({searchText: e.target.value});
+
+  search = async e => {
+    e.preventDefault();
+
+    const {searchText} = this.state;
+    const response = await fetch(
+      `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${searchText}`)
+    const json = await response.json();
+    this.setState({movies:json.results});
+  }  
+
 
   // add lifecycle function to make it async
   async componentDidMount(){
@@ -53,15 +70,29 @@ class App extends Component {
   }
   render() {
     //read state update here 
-    const {movies, selectedMovie} = this.state;
+    const {movies, selectedMovie, searchText} = this.state;
 
     return (
       <div>
-        <AppBar position="fixed" color="default">
+        <AppBar position="fixed">
           <Toolbar>
-            <Typography variant="h1" color="inherit">
+            <Typography variant="h1" color="inherit" className="title" >
               Top Rated Movies
             </Typography>
+            <form onSubmit={this.search}>
+              <Input
+                className="searchMovies"
+                type="search"
+                value={searchText}
+                placeholder="Search Movies"
+                onChange={this.searchTextChanged}
+                startAdornment={
+                  <InputAdornment>
+                    <span role="img" aria-label="Search">🔍</span>
+                  </InputAdornment>
+                }
+              />
+            </form>
           </Toolbar>
         </AppBar>
 
@@ -74,7 +105,7 @@ class App extends Component {
             />
           ))}
         </div>
-        <MovieDialog movie={selectedMovie} handleClose={this.clearMovie} />
+        // <MovieDialog movie={selectedMovie} handleClose={this.clearMovie} />
       </div>
     );
   }
