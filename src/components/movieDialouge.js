@@ -29,24 +29,19 @@ export default class MovieDialog extends React.Component {
     }
 
     return (
-      <div>
-        <Button variant="outlined" color="primary" onClick={this.handleClickOpen}>
-          Open form dialog
-        </Button>
         <Dialog
           open={!!movie}
-          onClose={this.handleClose}
+          onClose={handleClose}
           aria-labelledby="form-dialog-title"
         >
           {title}
           {content}
           <DialogActions>
-            <Button onClick={this.handleClose} color="primary">
+            <Button onClick={handleClose} color="primary">
               Close
             </Button>
           </DialogActions>
         </Dialog>
-      </div>
     );
   }
 }
