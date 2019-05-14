@@ -24,30 +24,10 @@ export default class MovieDialog extends React.Component {
                 image={`http://image.tmdb.org/t/p/w300${movie.poster_path}`}
                 title={movie.title}
               />
-              <TextField
-            label="Released on"
-            disabled
-            value={movie.release_date}
-            fullWidth
-          />
-          <TextField
-            label="Popularity"
-            disabled
-            value={movie.popularity}
-            fullWidth
-          />
-          <TextField
-            label="Vote average"
-            disabled
-            value={movie.vote_average}
-            fullWidth
-          />
-          <TextField
-            label="Vote count"
-            disabled
-            value={movie.vote_count}
-            fullWidth
-          />
+              <DialogContentText>Release Date: {movie.release_date}</DialogContentText>
+              <DialogContentText>Popularity: {movie.popularity}</DialogContentText>
+              <DialogContentText>Average Votes: {movie.vote_average}</DialogContentText>
+              <DialogContentText>Votes: {movie.vote_count}</DialogContentText>
           </DialogContent>
       );
 

@@ -1,5 +1,6 @@
 /* movieDialouge.css */
 .movie-detail-image {
-	width: 100%;
+	background-size: contain !important;
 	height: 450px;
+	margin: 10px 0;
 }
